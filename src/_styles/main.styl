@@ -1,0 +1,66 @@
+// Normalize Styles
+@import '../../node_modules/normalize.css/normalize.css';
+
+// Import Modules
+@import '../_modules/link/link';
+
+// Box sizing partial styles
+// Apply a natural box layout model to all elements
+*,
+*:before,
+*:after
+  -moz-box-sizing border-box
+  -webkit-box-sizing border-box
+  box-sizing border-box
+
+// FUNCTIONS //
+
+// Function to set a selector to be 100vh
+minHeight()
+  min-height 100vh
+
+// VARIABLE DECLARATIONS //
+
+// To help with mathz
+base = 8
+
+// Colors
+our-white = #fff
+our-black = #222
+
+// Fonts
+our-font = 'Comfortaa', cursive
+
+// THE ACTUAL CSS //
+
+body, html
+  minHeight()
+  font-family our-font
+  color our-black
+
+.container
+  minHeight()
+  display flex
+  flex-direction column
+  background url('https://picsum.photos/3000/1993?image=853&blur=100&gravity=center')
+  background-size cover
+  .main
+    flex 1
+    display flex
+    flex-direction column
+    justify-content space-evenly
+    align-items center
+    .icon
+      font-size (base*8)pt
+    .current
+      font-size (base*4)pt
+    .location
+      font-size (base*2)pt
+  footer
+    height (base*4)pt
+    display flex
+    align-items center
+    padding 0 0 0 (base*4)pt
+    color our-white
+    background-color alpha(our-black, 0.2)
+    font-size (base*1.2)pt
