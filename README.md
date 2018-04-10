@@ -7,6 +7,7 @@
 1. run `npm install`
 1. hit that `gulp serve` in terminal.
 1. Edit the code in the `src` folder.
+1. go to `localhost:3000` in your browser. As you edit shit in the code, the broswer will live update
 
 Note:
 
