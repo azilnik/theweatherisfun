@@ -2,9 +2,15 @@
 
 ## Get started (notes for Erixxx)
 
-hit that `gulp serve` in terminal.
+1. `cd` into the folder
+1. run `npm install gulp`
+1. run `npm install`
+1. hit that `gulp serve` in terminal.
+1. Edit the code in the `src` folder.
 
-Edit the code in the `src` folder.
+Note:
+
+The `src` folder is big and unwieldy.
 
 ## Technologies used
 
