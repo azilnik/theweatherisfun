@@ -2,9 +2,16 @@
 
 ## Get started (notes for Erixxx)
 
-hit that `gulp serve` in terminal.
+1. `cd` into the folder
+1. run `sudo npm install --global gulp`
+1. run `npm install`
+1. hit that `gulp serve` in terminal.
+1. Edit the code in the `src` folder.
+1. go to `localhost:3000` in your browser. As you edit shit in the code, the broswer will live update
 
-Edit the code in the `src` folder.
+Note:
+
+The `src` folder is big and unwieldy.
 
 ## Technologies used
 
