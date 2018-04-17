@@ -18,7 +18,18 @@ let icons = [
   'wi-day-light-wind',
   'wi-hot',
   'wi-day-sunny-overcast',
+  'wi-day-haze',
+  'wi-day-light-wind',
 ];
+
+// Our data object for the app
+let appData = {
+  city: '',
+  region: '',
+  units: '',
+  variability: variability()
+}
+
 
 // Silly function to add a class to an element. Might want to delete
 function addClass(el, className) {
@@ -27,33 +38,88 @@ function addClass(el, className) {
   else if (!hasClass(el, className)) el.className += " " + className
 }
 
+// Finds and returns the data for our app
+function setData(){
+  // Use promises with API for IP location
+  fetch('https://api.ipdata.co/')
+  // That data is wrapped in a promise, so let's get it outta there by convering to JSON
+  .then(dataWrappedByPromise => dataWrappedByPromise.json())
+  // With that data, you can do whatever you want
+  .then(APIdata => {
+    // Set the country
+    appData.country = APIdata.country_code;
+    // Set the city
+    appData.city = APIdata.city;
+    // Set the region
+    appData.region = APIdata.region;
+
+    // Run the app!
+    setLocation();
+    setIcon();
+    setWeatherUnits();
+    setTemperature();
+  });
+
+
+}
+
 // Function to randomly add a nice weather icon to the DOM
 function setIcon(){
-  // Randomly get an icon from our array
-  let currentIcon = icons[Math.floor(Math.random()*icons.length)];
+  // Get an icon from our array based on the time of the day
+  let currentIcon = icons[variability()];
   // Get the icon from the dom
   let iconDiv = document.querySelector('.icon');
   // Add the class for that icon to the icon div
   addClass(iconDiv, currentIcon);
 }
 
-function getLocation() {
-  // Use promises with API for IP location
-  fetch('https://api.ipdata.co/')
-  // That data is wrapped in a promise, so let's get it outta there by convering to JSON
-  .then(dataWrappedByPromise => dataWrappedByPromise.json())
-  // With that data, you can do whatever you want
-  .then(data => {
-    // Get the city from the API
-    let city = data.city
-    // Get the region from the API
-    let region = data.region
+function setLocation() {
+
     // Get our location element from the DOM
     let element = document.querySelector('.location');
     // Edit the contents of the location div to be the city and region.
-    element.innerHTML = `${city}, ${region}`;
-  })
+    element.innerHTML = `${appData.city}, ${appData.region}`;
 }
 
-getLocation();
-setIcon();
+// Function to set the weather in degrees.
+function setWeatherUnits(){
+    appData.country === 'US'  ? document.querySelector('.suffix').innerHTML ='F' : document.querySelector('.suffix').innerHTML = 'C';
+
+}
+
+
+// Function to return something between 0 and 6, corresponding to the time of day.
+function variability(){
+  // Get the current hour of the day (0-24)
+  let now = new Date()
+  let hour = now.getHours();
+  // Use the hour to set the temperature  variability to somewhere between 21-27
+  let variability = Math.floor(hour / 4);
+  // Return it
+  return variability;
+}
+
+// Function to convert to Fahrenheit
+function convertToF(temp) {
+  // Get celc temp
+  let cTempVal = temp
+  // Convert to F
+  let fTempVal = (cTempVal * (9 / 5)) + 32;
+  // Return the F
+  return fTempVal;
+}
+
+// Function to set the temp in the DOM
+function setTemperature(){
+  // Set a fake celcius temp
+  let celc = 21 + variability();
+
+  // Check to see if we need to display celc or far
+  let temp;
+  appData.country == "US" ? temp = convertToF(celc) : temp = celc;
+
+  // Display the temp in the DOM
+  document.querySelector('.temp').innerHTML = temp;
+}
+
+setData();
