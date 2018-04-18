@@ -1,13 +1,13 @@
 # Theweatheris.fun readme
 
-## Get started (notes for Erixxx)
+## Get started
 
 1. `cd` into the folder
 1. run `sudo npm install --global gulp`
 1. run `npm install`
-1. hit that `gulp serve` in terminal.
+1. enter `gulp serve` in terminal.
 1. Edit the code in the `src` folder.
-1. go to `localhost:3000` in your browser. As you edit shit in the code, the broswer will live update
+1. go to `localhost:3000` in your browser. As you edit code, the broswer will live update
 
 Note:
 
@@ -57,3 +57,11 @@ The tasks are as follows:
 `gulp test`: Lints all `*.js` file in the `source` folder using eslint
 
 ***Adding the `--debug` option to any gulp task displays extra debugging information (ex. data being loaded into your templates)***
+
+## Creators
+
+Theweatheris.fun was created by Ari Zilnik and Eric Hartman.
+
+Ari is ....
+
+Eric is a full-stack developer currently based in Toronto. His work can be found [here](https://github.com/erixhartman/).
