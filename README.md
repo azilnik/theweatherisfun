@@ -60,8 +60,8 @@ The tasks are as follows:
 
 ## Creators
 
-Theweatheris.fun was created by Ari Zilnik and Eric Hartman.
+Theweatheris.fun was created by Ari Zilnik and Eric Hartman. They like being told the weather outside is fun.
 
-Ari is ....
+Ari is a UX designer and front-end developer based in Brooklyn. He can be found [here](http://ari.zilnik.com).
 
 Eric is a full-stack developer currently based in Toronto. His work can be found [here](https://github.com/erixhartman/).
