@@ -106,7 +106,7 @@ function convertToF(temp) {
   // Convert to F
   let fTempVal = Math.round((cTempVal * (9 / 5)) + 32);
   // Return the F
- let fTempValInt = Math.round(fTempVal);
+  let fTempValInt = Math.round(fTempVal);
   // Round F value to nearest integer
   return fTempValInt;
 }

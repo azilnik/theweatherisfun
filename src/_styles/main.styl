@@ -38,6 +38,24 @@ body, html
   font-family our-font
   color our-black
 
+// link styles
+
+// unvisited link
+a:link
+  color our-white
+
+// visited link
+a:visited
+  color our-white
+
+// mouse over link
+a:hover
+  color our-white
+
+// selected link
+a:active
+  color darken(our-white, 25)
+
 .container
   minHeight()
   display flex
@@ -63,4 +81,7 @@ body, html
     padding 0 0 0 (base*4)pt
     color our-white
     background-color alpha(our-black, 0.2)
-    font-size (base*1.2)pt
+    @media (min-width: 321px)
+      font-size (base*1.2)pt
+    @media (max-width: 320px)
+      font-size (base*1)pt
