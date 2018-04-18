@@ -113,9 +113,8 @@ function convertToF(temp) {
 
 // Function to set the temp in the DOM
 function setTemperature(){
-  // Set range for to add to variablity between 1 and 3
+  // Set value to add to celcius. The inputs are variability and a random integer between 1-3
   let celcAdd = Math.floor(Math.random() * 3) + 1 + variability();
-
 
   // Set a fake celcius temp
   let celc = 20 + celcAdd;
