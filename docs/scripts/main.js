@@ -114,8 +114,11 @@ function convertToF(temp) {
 
 // Function to set the temp in the DOM
 function setTemperature(){
+  // Set value to add to celcius. The inputs are variability and a random integer between 1-3
+  let celcAdd = Math.floor(Math.random() * 3) + 1 + variability();
+
   // Set a fake celcius temp
-  let celc = 21 + variability();
+  let celc = 20 + celcAdd;
 
   // Check to see if we need to display celc or far
   let temp;
