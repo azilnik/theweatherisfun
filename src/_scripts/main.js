@@ -104,7 +104,7 @@ function convertToF(temp) {
   // Get celc temp
   let cTempVal = temp
   // Convert to F
-  let fTempVal = (cTempVal * (9 / 5)) + 32;
+  let fTempVal = Math.round((cTempVal * (9 / 5)) + 32);
   // Return the F
   return fTempVal;
 }
