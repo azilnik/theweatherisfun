@@ -64,4 +64,4 @@ Theweatheris.fun was created by Ari Zilnik and Eric Hartman. They like being tol
 
 Ari is a UX designer and front-end developer based in Brooklyn. He can be found [here](http://ari.zilnik.com).
 
-Eric is a full-stack developer currently based in Toronto. His work can be found [here](https://github.com/erixhartman/).
+Eric is a full-stack developer currently based in Toronto. His work can be found [here](http://ericresume.online/).
