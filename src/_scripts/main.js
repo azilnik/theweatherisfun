@@ -41,15 +41,17 @@ function addClass(el, className) {
 // Finds and returns the data for our app
 function setData(){
   // Use promises with API for IP location
-  fetch('https://api.ipdata.co/')
+  fetch('https://api.ipdata.co?api-key=eedf10585e55f5b27253d8491efcc15dc1bab572d54e017a9dc19761')
   // That data is wrapped in a promise, so let's get it outta there by convering to JSON
   .then(dataWrappedByPromise => dataWrappedByPromise.json())
   // With that data, you can do whatever you want
   .then(APIdata => {
     // Set the country
     appData.country = APIdata.country_code;
+
     // Set the city
     appData.city = APIdata.city;
+
     // Set the region
     appData.region = APIdata.region;
 
